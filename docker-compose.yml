@@ -3,10 +3,11 @@ services:
   localstack:
     image: localstack/localstack
     environment:
-      - SERVICES=events,sqs
+      - SERVICES=events,sqs,iam,lambda
       - DEBUG=1
       - PROVIDER_OVERRIDE_EVENTS=v2
     ports:
       - "4566:4566"
     volumes:
       - "./.localstack:/temp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"

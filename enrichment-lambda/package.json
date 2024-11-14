@@ -1,0 +1,13 @@
+{
+  "name": "consumer",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prep-release": "npm run build && zip lambda.zip dist/index.js && mv lambda.zip ../terraform/"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.1",
+    "typescript": "^4.0.0"
+  }
+}
